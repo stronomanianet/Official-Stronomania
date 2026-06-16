@@ -425,6 +425,23 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
