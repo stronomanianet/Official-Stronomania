@@ -13,7 +13,9 @@
     <div class="galaxy-bg"></div>
 
     <nav class="navbar">
-        <div class="logo">Stronomania<span>.</span></div>
+        <a href="#home" class="logo">
+            <img src="Stronomania.png" alt="Stronomania Logo" class="logo-img">
+        </a>
         <ul class="nav-links">
             <li><a href="#home">Start</a></li>
             <li><a href="#about">O technologii</a></li>
@@ -113,7 +115,7 @@
             </div>
 
             <div class="price-card epic">
-                <h3>Dojebany Custom</h3>
+                <h3>Dedykowany Custom</h3>
                 <div class="price">100 <span>zł</span></div>
                 <ul class="features">
                     <li><i class="fas fa-rocket"></i> Wszystko co technologia oferuje</li>
@@ -129,13 +131,14 @@
 
     <section id="contact" class="contact section-animate">
         <div class="contact-container">
-            <h2>Ugotujmy coś <span class="highlight">razem</span></h2>
+            <h2>Zbudujmy coś <span class="highlight">razem</span></h2>
             <p>Wybierz pakiet z listy. Płatność realizujemy przez <strong>BLIK</strong> lub <strong>PSC</strong>.</p>
             
-            <form action="stronomanianet@gmail.com" method="POST" class="contact-form">
-                <input type="hidden" name="_subject" value="Nowe zamówienie - Stronomania!">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                <input type="hidden" name="access_key" value="TWÓJ_KLUCZ_Z_WEB3FORMS">
+                
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <input type="hidden" name="subject" value="Nowe zamówienie - Stronomania!">
                 
                 <div class="input-group">
                     <input type="text" name="name" required placeholder="Twoje imię / Nick">
@@ -151,7 +154,7 @@
                         <option value="Basic Plus (30 zł)">Pakiet Basic Plus - 30 zł [BLIK/PSC]</option>
                         <option value="Standard JS (50 zł)">Pakiet Standard JS - 50 zł [BLIK/PSC]</option>
                         <option value="Premium Gaming (80 zł)">Pakiet Premium Gaming - 80 zł [BLIK/PSC]</option>
-                        <option value="Dojebany Custom (100 zł)">Pakiet Dojebany Custom - 100 zł [BLIK/PSC]</option>
+                        <option value="Dedykowany Custom (100 zł)">Pakiet Dedykowany Custom - 100 zł [BLIK/PSC]</option>
                         <option value="Inny projekt">Inny budżet / Własny projekt</option>
                     </select>
                 </div>
