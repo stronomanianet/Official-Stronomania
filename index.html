@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stronomania | Profesjonalne Strony HTML/CSS/JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="galaxy-bg"></div>
+
+    <nav class="navbar">
+        <div class="logo">Stronomania<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Start</a></li>
+            <li><a href="#about">O technologii</a></li>
+            <li><a href="#pricing">Cennik</a></li>
+            <li><a href="#contact" class="btn-neon">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero section-animate">
+        <div class="hero-content">
+            <div class="badge">🔥 Nowa era webdevu</div>
+            <h1>Kodowane z pasją.<br>Strony, które <span class="highlight">żyją</span>.</h1>
+            <p>Tworzę unikalne, super szybkie i widowiskowo animowane strony internetowe od podstaw. Zero gotowców, czysty i potężny kod.</p>
+            <div class="tech-tags">
+                <span><i class="fab fa-html5"></i> HTML5</span>
+                <span><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span><i class="fab fa-js"></i> JavaScript</span>
+            </div>
+            <a href="#pricing" class="btn-primary">Zobacz cennik</a>
+        </div>
+    </header>
+
+    <section id="about" class="about section-animate">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Czysty kod, <span class="highlight">maksymalna wydajność</span></h2>
+                <p>Każdy projekt piszę osobiście w świętej trójcy webdevelopmentu: <strong>HTML5, CSS3 oraz JavaScript</strong>. Dzięki temu Twoja strona nie zamula, ładuje się w ułamek sekundy i posiada płynne animacje GUI, których nie da się wyklikać w zwykłych kreatorach.</p>
+                <p>Niezależnie od tego, czy potrzebujesz prostej wizytówki, landing page'a, czy dedykowanej strony pod serwer Minecraft, lub gierkę.</p>
+                <p>Po zakupie dostaniesz czysty kod na twoim github, (domen nie oferujemy), wszelkie pytania odpowiadamy na mailu firmy</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Cyber Technology">
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing section-animate">
+        <h2>Wybierz swój <span class="highlight">Pakiet</span></h2>
+        <p class="section-subtitle">Ceny dopasowane do Twojego budżetu. Wybierz opcję i przejdź do zamówienia.</p>
+        
+        <div class="payment-methods-info">
+            <i class="fas fa-wallet"></i> AKCEPTOWANE PŁATNOŚCI: <span>BLIK</span> ORAZ <span>PSC (PAYSAFECARD)</span>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Starter</h3>
+                <div class="price">20 <span>zł</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Czysty kod HTML/CSS</li>
+                    <li><i class="fas fa-check"></i> Podstawowa struktura</li>
+                    <li><i class="fas fa-check"></i> Do 4 aktywnych linkow</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Skrypty JavaScript</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Formularz kontaktowy</li>
+                </ul>
+                <a href="#contact" class="btn-select" data-package="starter-20">Wybieram</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Basic Plus</h3>
+                <div class="price">30 <span>zł</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Kod HTML5 + CSS3</li>
+                    <li><i class="fas fa-check"></i> Do 6 aktywnych linkow</li>
+                    <li><i class="fas fa-check"></i> Responsywność (Mobile)</li>
+                    <li><i class="fas fa-check"></i> Podstawowe animacje</li>
+                    <li class="disabled"><i class="fas fa-times"></i> Zaawansowany JS</li>
+                </ul>
+                <a href="#contact" class="btn-select" data-package="basic-30">Wybieram</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="card-badge">Najpopularniejszy</div>
+                <h3>Standard JS</h3>
+                <div class="price">50 <span>zł</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> HTML5 + CSS3 + JavaScript</li>
+                    <li><i class="fas fa-check"></i> Nowoczesny Landing Page</li>
+                    <li><i class="fas fa-check"></i> Dynamiczne animacje GUI</li>
+                    <li><i class="fas fa-check"></i> Do 10 aktywnych linkow</li>
+                    <li><i class="fas fa-check"></i> Wsparcie po wdrożeniu</li>
+                </ul>
+                <a href="#contact" class="btn-select" data-package="standard-50">Wybieram</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Premium Gaming</h3>
+                <div class="price">80 <span>zł</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Pełny zestaw HTML/CSS/JS</li>
+                    <li><i class="fas fa-check"></i> Styl Premium własne zdjęcia</li>
+                    <li><i class="fas fa-check"></i> Idealne pod Sklep/Twoj projekt</li>
+                    <li><i class="fas fa-check"></i> Rozbudowane efekty i interface</li>
+                    <li><i class="fas fa-check"></i> Optymalizacja kodu, Wsparcie Firmy</li>
+                </ul>
+                <a href="#contact" class="btn-select" data-package="premium-80">Wybieram</a>
+            </div>
+
+            <div class="price-card epic">
+                <h3>Dojebany Custom</h3>
+                <div class="price">100 <span>zł</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-rocket"></i> Wszystko co technologia oferuje</li>
+                    <li><i class="fas fa-check"></i> Rozbudowane skrypty JS</li>
+                    <li><i class="fas fa-check"></i> Systemy gier</li>
+                    <li><i class="fas fa-check"></i> Animacje premium (Custom GUI)</li>
+                    <li><i class="fas fa-check"></i> Priorytetowa realizacja</li>
+                </ul>
+                <a href="#contact" class="btn-select" data-package="custom-100">Wybieram</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-animate">
+        <div class="contact-container">
+            <h2>Ugotujmy coś <span class="highlight">razem</span></h2>
+            <p>Wybierz pakiet z listy. Płatność realizujemy przez <strong>BLIK</strong> lub <strong>PSC</strong>.</p>
+            
+            <form action="https://formsubmit.co/stronomanianet@gmail.com" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="Nowe zamówienie - Stronomania!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="input-group">
+                    <input type="text" name="name" required placeholder="Twoje imię / Nick">
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" required placeholder="Twój adres E-mail">
+                </div>
+                
+                <div class="input-group">
+                    <select name="package" id="package-select" required>
+                        <option value="" disabled selected>-- Wybierz interesujący Cię pakiet --</option>
+                        <option value="Starter (20 zł)">Pakiet Starter - 20 zł [BLIK/PSC]</option>
+                        <option value="Basic Plus (30 zł)">Pakiet Basic Plus - 30 zł [BLIK/PSC]</option>
+                        <option value="Standard JS (50 zł)">Pakiet Standard JS - 50 zł [BLIK/PSC]</option>
+                        <option value="Premium Gaming (80 zł)">Pakiet Premium Gaming - 80 zł [BLIK/PSC]</option>
+                        <option value="Dojebany Custom (100 zł)">Pakiet Dojebany Custom - 100 zł [BLIK/PSC]</option>
+                        <option value="Inny projekt">Inny budżet / Własny projekt</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <textarea name="message" rows="5" required placeholder="Napisz szczegóły zamówienia..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Wyślij wiadomość do nas</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
