@@ -1,12 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Intersection Observer - Płynne wjeżdżanie sekcji podczas skrolowania
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.12
-    };
-
+    // Intersection Observer
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -16,45 +11,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const animatedSections = document.querySelectorAll('.section-animate');
-    animatedSections.forEach(section => {
-        observer.observe(section);
-    });
+    document.querySelectorAll('.section-animate').forEach(section => observer.observe(section));
 
-    // 2. Automatyczny wybór pakietu w formularzu po kliknięciu w cenniku
+    // Automatyczny wybór pakietu
     const selectButtons = document.querySelectorAll('.btn-select');
     const packageSelect = document.getElementById('package-select');
 
     selectButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const packageType = button.getAttribute('data-package');
-            
-            if (packageSelect) {
-                if (packageType === 'starter-20') {
-                    packageSelect.value = 'Starter (20 zł)';
-                } else if (packageType === 'basic-30') {
-                    packageSelect.value = 'Basic Plus (30 zł)';
-                } else if (packageType === 'standard-50') {
-                    packageSelect.value = 'Standard JS (50 zł)';
-                } else if (packageType === 'premium-80') {
-                    packageSelect.value = 'Premium Gaming (80 zł)';
-                } else if (packageType === 'custom-100') {
-                    packageSelect.value = 'Dojebany Custom (100 zł)';
-                }
-            }
+            const val = button.getAttribute('data-package');
+            const map = {
+                'starter-20': 'Starter (20 zł)',
+                'basic-30': 'Basic Plus (30 zł)',
+                'standard-50': 'Standard JS (50 zł)',
+                'premium-80': 'Premium Gaming (80 zł)',
+                'custom-100': 'Dojebany Custom (100 zł)'
+            };
+            if (packageSelect) packageSelect.value = map[val];
         });
     });
 
-    // 3. Obsługa wysyłania formularza
+    // Obsługa Web3Forms
     const form = document.querySelector('.contact-form');
     if (form) {
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
             const btn = form.querySelector('.btn-submit');
-            if (btn) {
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wysyłanie pakietu...';
-                btn.style.opacity = '0.8';
-                btn.style.pointerEvents = 'none';
-            }
+            const originalBtnText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wysyłanie...';
+            btn.style.opacity = '0.8';
+            btn.style.pointerEvents = 'none';
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(async (response) => {
+                if (response.status == 200) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Wysłano!';
+                    btn.style.backgroundColor = '#22c55e';
+                    form.reset();
+                } else {
+                    btn.innerHTML = '<i class="fas fa-times"></i> Błąd';
+                }
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    btn.innerHTML = originalBtnText;
+                    btn.style.opacity = '1';
+                    btn.style.pointerEvents = 'auto';
+                    btn.style.backgroundColor = 'transparent';
+                }, 3000);
+            });
         });
     }
 });
